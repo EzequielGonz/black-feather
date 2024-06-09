@@ -1,0 +1,46 @@
+[debug] [2024-06-09T03:44:47.245Z] ----------------------------------------------------------------------
+[debug] [2024-06-09T03:44:47.248Z] Command:       /nix/store/2hxfkbdbwh2s7rc20khzq8sjnywq0xs8-nodejs-18.19.1/bin/node /nix/store/9cksgsmi7xwqm3js1z92zhib6rnrjdcg-firebase-tools-13.9.0/lib/node_modules/firebase-tools/lib/bin/firebase.js init hosting
+[debug] [2024-06-09T03:44:47.249Z] CLI Version:   13.9.0
+[debug] [2024-06-09T03:44:47.249Z] Platform:      linux
+[debug] [2024-06-09T03:44:47.249Z] Node Version:  v18.19.1
+[debug] [2024-06-09T03:44:47.250Z] Time:          Sun Jun 09 2024 03:44:47 GMT+0000 (Coordinated Universal Time)
+[debug] [2024-06-09T03:44:47.250Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-06-09T03:44:47.258Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-06-09T03:44:47.259Z] > authorizing via signed-in user (juanlella@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/user/blackfeathertailwind
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  If you want to create a project in a Google Cloud organization or folder, please use "firebase projects:create" instead, and return to this command when you've created the project. 
+[debug] [2024-06-09T03:45:13.143Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects [none]
+[debug] [2024-06-09T03:45:13.143Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"projectId":"blackfeather","name":"blackfeather"}
+[debug] [2024-06-09T03:45:14.665Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects 200
+[debug] [2024-06-09T03:45:14.666Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects {"name":"operations/cp.5243590656297143031"}
+[debug] [2024-06-09T03:45:14.667Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.5243590656297143031 [none]
+[debug] [2024-06-09T03:45:15.943Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.5243590656297143031 200
+[debug] [2024-06-09T03:45:15.943Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/operations/cp.5243590656297143031 {"name":"operations/cp.5243590656297143031","metadata":{"@type":"type.googleapis.com/google.cloudresourcemanager.v1.ProjectCreationStatus","ready":true},"done":true,"error":{"code":9,"message":"Callers must accept Terms of Service","details":[{"@type":"type.googleapis.com/google.rpc.PreconditionFailure","violations":[{"type":"TOS","subject":"cloud","description":"Callers must accept Terms of Service"}]}]}}
+[debug] [2024-06-09T03:45:15.964Z] FirebaseError: Callers must accept Terms of Service
+    at OperationPoller.poll (/nix/store/9cksgsmi7xwqm3js1z92zhib6rnrjdcg-firebase-tools-13.9.0/lib/node_modules/firebase-tools/lib/operation-poller.js:24:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async createCloudProject (/nix/store/9cksgsmi7xwqm3js1z92zhib6rnrjdcg-firebase-tools-13.9.0/lib/node_modules/firebase-tools/lib/management/projects.js:186:29)
+    at async createFirebaseProjectAndLog (/nix/store/9cksgsmi7xwqm3js1z92zhib6rnrjdcg-firebase-tools-13.9.0/lib/node_modules/firebase-tools/lib/management/projects.js:45:9)
+    at async promptAndCreateNewProject (/nix/store/9cksgsmi7xwqm3js1z92zhib6rnrjdcg-firebase-tools-13.9.0/lib/node_modules/firebase-tools/lib/init/features/project.js:32:12)
+    at async doSetup (/nix/store/9cksgsmi7xwqm3js1z92zhib6rnrjdcg-firebase-tools-13.9.0/lib/node_modules/firebase-tools/lib/init/features/project.js:88:27)
+    at async init (/nix/store/9cksgsmi7xwqm3js1z92zhib6rnrjdcg-firebase-tools-13.9.0/lib/node_modules/firebase-tools/lib/init/index.js:39:9)
+[error] 
+[error] Error: Failed to create project. See firebase-debug.log for more info.
